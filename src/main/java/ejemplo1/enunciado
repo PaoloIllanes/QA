@@ -1,0 +1,9 @@
+se tiene un metodo donde devuelve el mensaje de felicitaciona los estudiantes con una nota aprobatoria
+de 71 pts, dependiendo de los rangos devuelve un especifico mensaje
+
+Entrada puntos : 0 -100
+
+0-70 Esfuerzate mas tu nota es: NN
+71-80 Bien mas tu nota es: NN
+81-90 Muy bien mas tu nota es: NN
+91-100 Excelente mas tu nota es: NN
