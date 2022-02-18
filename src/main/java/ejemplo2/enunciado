@@ -1,0 +1,13 @@
+Se requiere un programa que retorne la cantidad maxima de prestamo que se puede realizar
+de acuerdo a su historial crediticio hay 3 categorias:
+A : sin deudas
+B : retrasos de pago en sus creditos acuales
+C : esta en la lista negra (no paga cuotas de sus prestamos)
+
+A-----200000
+B-----100000
+C-----0
+metodo donde ingresamos la id de una persona
+metodo(ci){
+    crediticio---->A,B,C
+}
