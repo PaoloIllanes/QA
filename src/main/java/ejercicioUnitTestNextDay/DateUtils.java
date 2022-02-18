@@ -24,14 +24,15 @@ public class DateUtils {
         month= month.toLowerCase();
         String nextDate="";
         boolean bisiesto= isBisiesto(year);
-        if (day > 31 || day < 1||year<1||!months.contains(month)) {
+        if (day > 31 || day < 1||year<1||!months.contains(month) || (month.equals("febrero") && day>29 )) {
             System.out.println("La fecha introducida no es valida");
-        }else if(day==28 && !bisiesto && month.equals("febrero") || (day==29 && bisiesto && month.equals("febrero"))){
+        }else if(day<28 && !bisiesto && month.equals("febrero") || (day<29 && bisiesto && month.equals("febrero"))){
                 nextDate= nextMonth(day, month, year);
-        }else if(day==30 && (month.equals("abril") || month.equals("junio")||
+        }else if(day<30 && (month.equals("abril") || month.equals("junio")||
                 month.equals("septiembre")||month.equals("noviembre"))){
+
                 nextDate= nextMonth(day, month, year);
-        }else if(day==31 && (month.equals("enero") || month.equals("marzo")||
+        }else if(day<31 && (month.equals("enero") || month.equals("marzo")||
                 month.equals("mayo")||month.equals("julio")||month.equals("agosto")
                 ||month.equals("octubre"))){
                 nextDate= nextMonth(day, month, year);
@@ -67,7 +68,7 @@ public class DateUtils {
 
     public static void main(String[] args) {
    DateUtils date = new DateUtils();
-   date.NDate(31,"Marzo",2001);
+   date.NDate(30,"abril",2001);
     }
 }
 
