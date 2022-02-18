@@ -60,14 +60,7 @@ public class MockPrimeTest {
 
 
     }
-    @Test
-    public void verifyInvalidOne() throws Exception {
 
-        Geneartor geneartor = new Geneartor(utilPrime);
-        Assertions.assertThrows(Exception.class, ()-> {geneartor.getValuesNumber(0);} );
-
-
-    }
 
 
 }

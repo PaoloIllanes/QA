@@ -12,12 +12,8 @@ public class Geneartor {
 
     public List<Integer> getValuesNumber(int num) throws Exception {
         List<Integer> numbers = new ArrayList<>();
-        if(num<1){
+        if(num<2){
             throw new Exception("Numero no valido");
-
-        } else if (num==1) {
-            numbers.add(1);
-            System.out.println("Values: "+numbers);
 
         }else if(utilPrime.isPrime(num)){
 
