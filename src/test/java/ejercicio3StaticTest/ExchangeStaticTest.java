@@ -17,29 +17,29 @@ public class ExchangeStaticTest {
         MockedStatic<ConverterStatic> mocked = Mockito.mockStatic(ConverterStatic.class);
         mocked.when(()->ConverterStatic.convertirMonedaSt("dolar","boliviano")).thenReturn(7.00);
         mocked.when(()->ConverterStatic.convertirMonedaSt("euro","boliviano")).thenReturn(8.00);
-        mocked.when(()->ConverterStatic.convertirMonedaSt("dolar","euro")).thenReturn(1.14);
+        mocked.when(()->ConverterStatic.convertirMonedaSt("euro","dolar")).thenReturn(1.14);
     }
 
     @Test
     public void verifyConvertion1(){
         ExchangeStatic exchangeStatic = new ExchangeStatic();
-        Assertions.assertEquals("La cantidad convertida fue de : 700.0 boliviano",
-                exchangeStatic.cambiarMonedaSt(100,"dolar","boliviano"),
-                "ERROR es incorrecto");
+        String expected ="La cantidad convertida fue de : 700.0 boliviano";
+        String actual = exchangeStatic.cambiarMonedaSt(100,"dolar","boliviano");
+        Assertions.assertEquals(expected, actual, "ERROR es incorrecto");
     }
     @Test
     public void verifyConvertion2(){
         ExchangeStatic exchangeStatic = new ExchangeStatic();
-        Assertions.assertEquals("La cantidad convertida fue de : 800.0 boliviano",
-                exchangeStatic.cambiarMonedaSt(100,"euro","boliviano"),
-                "ERROR es incorrecto");
+        String expected="La cantidad convertida fue de : 800.0 boliviano";
+        String actual =exchangeStatic.cambiarMonedaSt(100,"euro","boliviano");
+        Assertions.assertEquals(expected, actual, "ERROR es incorrecto");
     }
     @Test
     public void verifyConvertion3(){
         ExchangeStatic exchangeStatic = new ExchangeStatic();
-        Assertions.assertEquals("La cantidad convertida fue de : 114.0 boliviano",
-                exchangeStatic.cambiarMonedaSt(100,"euro","dolar"),
-                "ERROR es incorrecto");
+        String expected="La cantidad convertida fue de : 114.0 dolar";
+        String actual =exchangeStatic.cambiarMonedaSt(100,"euro","dolar");
+        Assertions.assertEquals(expected, actual, "ERROR es incorrecto");
     }
 
 }
