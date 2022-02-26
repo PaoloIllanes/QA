@@ -27,8 +27,12 @@ public class CompareJSON {
                  msg = "EL JSON actual no contiene la propiedad : "+expectedKey;
                  break;
              }else if(!expectedValue.equals(actualValue)){
+                 if((actualValue.equals("IGNORE")||(expectedValue.equals("IGNORE")))){
+                     continue;
+                 }else{
                  msg = "Los valores de "+expectedKey+" son diferentes : "+"Expected : "+expectedValue+ " Actual : "+actualValue;
                  break;
+                 }
 
              }
 

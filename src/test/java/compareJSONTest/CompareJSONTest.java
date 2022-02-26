@@ -41,4 +41,14 @@ public class CompareJSONTest {
 
     }
 
+    @Test
+    public void JSONTestIgnore() throws IOException {
+        CompareJSON cJson =  new CompareJSON();
+        String actual = cJson.compare("{\"Name\":\"Jhon\",\"Age\":\"IGNORE\"}","{\"Name\":\"Jhon\",\"Age\":\"44\"}");
+        String expected ="Los JSON son iguales";
+
+        Assertions.assertEquals(expected,actual);
+
+    }
+
 }
